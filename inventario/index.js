@@ -13,6 +13,10 @@ let inventario = [
 ]
 
 // Rutas relacionadas al inventario de comidas
+app.get('/', (req, res) => {
+  res.status(200).json({ message: 'Microservicio Inventario funcionando en la ruta raíz.' });
+})
+
 app.get('/inventario', (req, res) => {//Pasar el listado de todos los trabajadores
   res.status(200).json(inventario);
 })

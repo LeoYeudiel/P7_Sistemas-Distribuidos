@@ -16,6 +16,10 @@ const SERVICES = {
   TRABAJADORES: process.env.TRABAJADORES_URL || "http://localhost:3003"
 };
 
+app.get('/', (req, res) => {
+  res.status(200).json({ message: 'Microservicio Inventario funcionando en la ruta raíz.' });
+})
+
 app.post("/pedidos", async (req, res) => { //Hacer pedido
   let { productoId } = req.body;
   console.log(req.body)
