@@ -27,7 +27,7 @@ const proxy = (urlBase) => async (req, res) => {
     if (error.response) {
       res.status(error.response.status).json(error.response.data);
     } else {
-      res.status(500).json({ error: 'Error en el gateway' });
+      res.status(500).json({ error: 'Error en el gateway', mensaje: error.response, url: `${urlBase + req.url} `});
     }
   }
 };
