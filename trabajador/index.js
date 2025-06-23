@@ -12,6 +12,9 @@ let trabajadores = [
   { id: 3, nombre: "Carlos Tomás Cervantes Alcaraz", puesto: "Mercadologo"}
 ]
 
+app.get('/', (req, res) => {
+  res.status(200).json({ message: 'Microservicio Inventario funcionando en la ruta raíz.' });
+})
 
 //Rutas orientadas a trabajadores del restaurante
 app.get('/trabajadores', (req, res) => {//Pasar el listado de todos los trabajadores
